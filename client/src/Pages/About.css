@@ -1,0 +1,22 @@
+.about_heading{
+  font-size: 52px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  color: rgb(247, 161, 69)
+}
+.about_para{
+  font-size: 18px;
+  font-family: cursive;
+  color: rgb(4, 4, 49);
+}
+.about_img{
+  height: 280px;
+  width: 650px;
+  padding: 0px 10px 0px 10px ;
+  margin-left: 380px;
+}
+.about_img2{
+  padding: 0 10px 0 10px;
+  margin-left: 680px;
+}

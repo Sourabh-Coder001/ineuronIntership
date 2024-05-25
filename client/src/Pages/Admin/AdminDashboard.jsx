@@ -32,7 +32,7 @@ const AdminDashboard = () => {
               <span></span>
               <div className="px-4 mt-1">
                 <p className="fonts">
-                The Admin for Building Farming Ecommerce Websites is a versatile toolset designed to facilitate the creation and management of online platforms tailored for agricultural businesses. With intuitive interfaces and customizable templates, it enables easy website setup, allowing administrators to feature products, manage inventory, and oversee sales effortlessly. This admin system integrates robust security measures and payment gateways, ensuring safe transactions for buyers and sellers within the farming community. 
+                The Admin for Building electronic Ecommerce Websites is a versatile toolset designed to facilitate the creation and management of online platforms tailored for businesses. With intuitive interfaces and customizable templates, it enables easy website setup, allowing administrators to feature products, manage inventory, and oversee sales effortlessly. This admin system integrates robust security measures and payment gateways, ensuring safe transactions for buyers and sellers within the farming community. 
                 </p>
               </div>
               <ul className="social-list">

@@ -33,9 +33,9 @@ const HomePage = () => {
     fontSize: '25px' // Increase font size (adjust as needed)
   };
 const HomePrice = {
-    color: '#000',
+    color: '#003eld',
     fontWeight: 'bold', 
-    fontSize: '32px' // Increase font size (adjust as needed)
+    fontSize: '28px' // Increase font size (adjust as needed)
 
   };
 const destyle={
@@ -200,7 +200,7 @@ const handelFilter =(value,id)=>{
                     <Card.Text style={destyle}>
                       {p.description.substring(0, 90)}...
                     </Card.Text>
-                      <Card.Title className="card-price" style={HomePrice}>
+                      <Card.Title  style={HomePrice}>
                       ₹ {p.price}
                       </Card.Title>
                     <div className="Card-Price card-name-price">

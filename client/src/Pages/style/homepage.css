@@ -5,7 +5,7 @@
 }
 .Card-Price{
   margin: 1.5em 0;
-  color: rgb(0, 14, 9);
+  color: rgb(3, 148, 97);
 	font-size: 1.2em;
   font-weight: bold;
 }
@@ -15,22 +15,53 @@
 }
 
 .buy--btn {
-	padding: 10px;
-	border: none;
-	border-radius: 7px;
-	font-size: 0.8em;
-	font-weight: 600;
-	letter-spacing: 1.3px;
-	color: #fff;
-	background-color: rgb(245, 18, 18);
-	/* box-shadow: 2px 20px 25px -7px rgb(202, 207, 103); */
+	width: 10em;
+	position: relative;
+	height: 3.5em;
+	border: 3px ridge #149CEA;
+	outline: none;
+	background-color: transparent;
+	color: white;
+	transition: 1s;
+	border-radius: 0.3em;
+	font-size: 16px;
+	background-color: rgb(164, 100, 109);
+	font-weight: bold;
 	cursor: pointer;
-
-	&:active {
-		transform: scale(0.97);
-	}
+}
+.buy--btn::after{
+	width: 10em;
+	position: relative;
+	height: 3.5em;
+	border: 3px ridge #149CEA;
+	outline: none;
+	background-color: transparent;
+	color: white;
+	transition: 1s;
+	border-radius: 0.3em;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.buy--btn::before{
+	content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  
+  transition: 0.5s;
 }
 
+.buy--btn:hover::before, button:hover::after {
+	transform: scale(0)
+  }
+  
+  .buy--btn:hover {
+	box-shadow: inset 0px 0px 25px #1479EA;
+  }
 .Card_section{
 	margin-left: 2rem;
 	background: rgb(127,127,213);

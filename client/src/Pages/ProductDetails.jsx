@@ -8,7 +8,7 @@ import ActionItems from './ActionItems';
 import { Button, Row, Card,Col } from 'react-bootstrap';
 import { toast } from 'react-hot-toast';
 import { useCart } from '../context/Cart';
-
+import { useNavigate } from 'react-router-dom';
 
 
 const Component = styled(Box)(({ theme }) => ({
@@ -28,6 +28,7 @@ const RightContainer = styled(Grid)`
 `;
 
 const ProductDetails = () => {
+  const navigate=useNavigate();
   const [product, setProduct] = useState({});
   const [relatedProducts, setRelatedProducts] = useState([]);
   const params = useParams();
@@ -114,6 +115,9 @@ const ProductDetails = () => {
                   >
                     Add to Cart
                   </Button>
+                  <Button variant='denger' className="buy--btn ms-1" onClick={() => navigate(`/product/${p.slug}`)}>
+                        More Details
+                      </Button>
                 </div>
               </Card.Body>
             </Card>

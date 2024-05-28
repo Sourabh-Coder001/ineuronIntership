@@ -30,16 +30,16 @@ const HomePage = () => {
     color: '#0F3443',
     fontWeight: 'bold', 
     textAlign:'center',
-    fontSize: '25px' // Increase font size (adjust as needed)
+    fontSize: '22px' // Increase font size (adjust as needed)
   };
 const HomePrice = {
-    color: '#003eld',
+    color: '#34700B',
     fontWeight: 'bold', 
     fontSize: '28px' // Increase font size (adjust as needed)
 
   };
 const destyle={
-  color:'white',
+  color:'#000',
   fontWeight:'bold'
 }
 
@@ -195,7 +195,7 @@ const handelFilter =(value,id)=>{
                   />
                   <Card.Body>
                     <div className="Card_name card-name-price">
-                      <Card.Title style={titleStyle}>{p.name.substring(0, 60)}...</Card.Title>
+                      <Card.Title style={titleStyle}>{p.name.substring(0, 40)}...</Card.Title>
                     </div>
                     <Card.Text style={destyle}>
                       {p.description.substring(0, 90)}...
@@ -204,16 +204,16 @@ const handelFilter =(value,id)=>{
                       ₹ {p.price}
                       </Card.Title>
                     <div className="Card-Price card-name-price">
-                      <Button variant='info' className="buy--btn ms-1" onClick={() => navigate(`/product/${p.slug}`)}>
+                      <Button variant='denger' className="buy--btn ms-1" onClick={() => navigate(`/product/${p.slug}`)}>
                         More Details
                       </Button>
-                      <button className="buy--btn ms-1" onClick={() => {
+                      <Button variant='info' className="buy--btn ms-9" onClick={() => {
                         setCart([...cart, p])
                         localStorage.setItem('cart', JSON.stringify([...cart, p]));
                         toast.success('Item Added to cart')
                       }}>
                         ADD TO CART
-                      </button>
+                      </Button>
                     </div>
                   </Card.Body>
                 </Card>

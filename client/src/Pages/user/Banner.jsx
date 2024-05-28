@@ -47,7 +47,7 @@ const Banner = () => {
             key={index}
             src={image}
             alt={`Banner ${index + 1}`}
-            style={{ width: '100%', height: '300px', flexShrink: 0 }}
+            style={{ width: '100%', height: '500px', flexShrink: 0 }}
           />
         ))}
         {bannerImages.map((image, index) => (

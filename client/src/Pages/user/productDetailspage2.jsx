@@ -92,7 +92,7 @@ const ProductDetailspage2 = () => {
                     <TableBody>
                         <ColumnText>
                             <TableCell style={{color:'#878787'}}>Delivery:</TableCell>
-                            <TableCell style={{fontWeight:600}}>Delivery Date: {date.toDateString()} |₹ 40</TableCell>
+                            <TableCell style={{fontWeight:600}}>Delivery Date: {date.toDateString()} |Free</TableCell>
                         </ColumnText>
                         <ColumnText>                         
                           </ColumnText>

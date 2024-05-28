@@ -3,9 +3,9 @@ import { NavLink, Link } from "react-router-dom";
 import { useAuth } from "../../context/auth";
 import toast from "react-hot-toast";
 import SearchInput from "../Form/SearchInput";
-import useCategory  from "../../hooks/useCategory";
+import useCategory from "../../hooks/useCategory";
 import { useCart } from "../../context/Cart";
-import { FaShopify } from "react-icons/fa6";
+import { FaShopify } from "react-icons/fa";
 import { Badge } from "antd";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PhonelinkRingIcon from '@mui/icons-material/PhonelinkRing';
@@ -15,13 +15,15 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const twitterLink = 'https://twitter.com/example';
-  const instagramLink = 'https://instagram.com/__sourabh_skater__09?igshid=NzZlODBkYWE4Ng==';
-  const facebookLink = 'https://www.facebook.com/sourabh.lakade.3?mibextid=ZbWKwL';
-  const whatsappLink = 'https://wa.me/9370171615'; 
+const instagramLink = 'https://instagram.com/__sourabh_skater__09?igshid=NzZlODBkYWE4Ng==';
+const facebookLink = 'https://www.facebook.com/sourabh.lakade.3?mibextid=ZbWKwL';
+const whatsappLink = 'https://wa.me/9370171615';
+
 const Header = () => {
   const [auth, setAuth] = useAuth();
-  const [cart]=useCart();
-  const categories=useCategory();
+  const [cart] = useCart();
+  const categories = useCategory();
+
   const handleLogout = () => {
     setAuth({
       ...auth,
@@ -31,23 +33,24 @@ const Header = () => {
     localStorage.removeItem("auth");
     toast.success("Logout Successfully");
   };
+
   return (
     <>
-     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px', backgroundColor: 'white' }}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <h5 style={{ marginRight: '20px' }}><PhonelinkRingIcon /> Toll Free:- 808080 555</h5>
-          <h1 className='kisan_title' style={{ marginLeft:'350px' }}>
-            <span style={{ color: 'orange', fontFamily: 'Georgia', fontWeight: 700 }}>Shopfy</span>
-        
-          </h1>
+      <div className="header-top">
+        <div className="header-contact">
+          <PhonelinkRingIcon /> Toll Free: 808080 555
         </div>
-        <div style={{ display: 'flex',marginRight:'20px' }}>
-          <h1 style={{ marginLeft: '20px' }}> <a href={twitterLink}><TwitterIcon /></a>  <a href={instagramLink}><InstagramIcon /></a>       <a href={facebookLink}><FacebookIcon /></a>
-          <a style={{marginLeft:'10px'}} href={whatsappLink}><WhatsAppIcon /></a></h1>
+        <h1 className="kisan-title">
+          <span className="shopfy-title">Shopfy</span>
+        </h1>
+        <div className="header-socials">
+          <a href={twitterLink}><TwitterIcon /></a>
+          <a href={instagramLink}><InstagramIcon /></a>
+          <a href={facebookLink}><FacebookIcon /></a>
+          <a href={whatsappLink}><WhatsAppIcon /></a>
         </div>
       </div>
-      <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary"  >
+      <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -62,18 +65,18 @@ const Header = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <Link to="/" className="navbar-brand">
-            <FaShopify/> Shopfy
+              <FaShopify /> Shopfy
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-           <SearchInput/>
+              <SearchInput />
               <li className="nav-item">
-                <NavLink to="/" className="navstyle nav-link ">
-                 Home
+                <NavLink to="/" className="nav-link">
+                  Home
                 </NavLink>
               </li>
               <li className="nav-item dropdown">
                 <Link
-                  className="navstyle nav-link dropdown-toggle"
+                  className="nav-link dropdown-toggle"
                   to={"/categories"}
                   data-bs-toggle="dropdown"
                 >
@@ -81,96 +84,131 @@ const Header = () => {
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="navstyle dropdown-item" to={"/categories"}>
+                    <Link className="dropdown-item" to={"/categories"}>
                       All Categories
                     </Link>
                   </li>
                   {categories?.map((c) => (
-                    <li>
-                      <Link
-                        className="dropdown-item"
-                        to={`/category/${c.slug}`}
-                      >
+                    <li key={c.slug}>
+                      <Link className="dropdown-item" to={`/category/${c.slug}`}>
                         {c.name}
                       </Link>
                     </li>
                   ))}
                 </ul>
               </li>
-              <ul className="nav">
-      
-      <li className="nav-item">
-                <NavLink to="/about" className="navstyle nav-link ">
-                 Aboutus
+              <li className="nav-item">
+                <NavLink to="/about" className="nav-link">
+                  About Us
                 </NavLink>
               </li>
-      
-    </ul>
+              <li className="nav-item">
+                <NavLink to="/contact" className="nav-link">
+                  Contact Us
+                </NavLink>
+              </li>
               {!auth?.user ? (
                 <>
                   <li className="nav-item">
-                    <NavLink to="/register" className="navstyle button-login nav-link">
+                    <NavLink to="/register" className="nav-link">
                       Register
                     </NavLink>
                   </li>
                   <li className="nav-item">
-                    <NavLink to="/login" className="navstyle button-login nav-link">
+                    <NavLink to="/login" className="nav-link">
                       Login
                     </NavLink>
                   </li>
                 </>
               ) : (
-                <>
-                  <li className="nav-item dropdown">
-                    <NavLink
-                      className="nav-link dropdown-toggle"
-                      href="#"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      style={{ border: "none" }}
-                    >
-                      {auth?.user?.name}
-                    </NavLink>
-                    
-                    <ul className="dropdown-menu">
-                      <li>
-                        <NavLink
-                          to={`/dashboard/${
-                            auth?.user?.role === 1 ? "admin" : "user"
-                          }`}
-                          className="navstyle dropdown-item"
-                        >
-                          Dashboard
-                        </NavLink>
-                      </li>
-                      
-                      <li>
-                        <NavLink
-                          onClick={handleLogout}
-                          to="/login"
-                          className="navstyle dropdown-item"
-                        >
-                          Logout
-                        </NavLink>
-                      </li>
-                    </ul>
-                  </li>
-                </>
+                <li className="nav-item dropdown">
+                  <NavLink
+                    className="nav-link dropdown-toggle"
+                    to="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    {auth?.user?.name}
+                  </NavLink>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <NavLink
+                        to={`/dashboard/${auth?.user?.role === 1 ? "admin" : "user"}`}
+                        className="dropdown-item"
+                      >
+                        Dashboard
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        onClick={handleLogout}
+                        to="/login"
+                        className="dropdown-item"
+                      >
+                        Logout
+                      </NavLink>
+                    </li>
+                  </ul>
+                </li>
               )}
               <li className="nav-item">
                 <Badge count={cart?.length} showZero>
-                <NavLink to="/cart" className="navstyle nav-link">
-                  
-                <ShoppingCartIcon/>    Cart 
-                
-                </NavLink>
+                  <NavLink to="/cart" className="nav-link">
+                    <ShoppingCartIcon /> Cart
+                  </NavLink>
                 </Badge>
               </li>
             </ul>
           </div>
         </div>
       </nav>
-      </div>
+      <style jsx>{`
+        .header-top {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px;
+          background-color: white;
+        }
+        .header-contact {
+          display: flex;
+          align-items: center;
+        }
+        .kisan-title {
+          margin: 0;
+          text-align: center;
+        }
+        .shopfy-title {
+          color: orange;
+          font-family: Georgia, serif;
+          font-weight: 700;
+        }
+        .header-socials {
+          display: flex;
+          align-items: center;
+        }
+        .header-socials a {
+          margin-left: 10px;
+        }
+        @media (max-width: 768px) {
+          .kisan-title {
+            font-size: 1.5rem;
+            margin-left: 20px;
+          }
+          .header-contact {
+            font-size: 0.9rem;
+          }
+        }
+        @media (max-width: 576px) {
+          .header-contact {
+            font-size: 0.8rem;
+          }
+          .header-socials a {
+            margin-left: 5px;
+          }
+        }
+      `}</style>
     </>
   );
 };

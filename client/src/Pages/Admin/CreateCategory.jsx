@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 import axios from 'axios';
 import CategoryForm from '../../Components/Form/CategoryForm';
 import { Modal } from 'antd';
-
+import '../style/CreateCategory.css';
 
 
 
@@ -125,9 +125,9 @@ const CreateCategory = () => {
                   {categories?.map(c => (
                     <tr key={c._id}>
                       <td>{c.name}</td>
-                      <td><button className='btn btn-primary' onClick={()=>{setVisible(true); setUpdatedName(c.name);
+                      <td><button className='EditBtn' onClick={()=>{setVisible(true); setUpdatedName(c.name);
                       setSelected(c);}}>Edit</button>
-                      <button className='btn btn-primary ms-2'
+                      <button className='DeleteBtn'
                       onClick={()=>{handelDelete(c._id)}}
                       >Delete</button>
                       
@@ -141,7 +141,7 @@ const CreateCategory = () => {
           </div>
         </div>
       </div>
-      {/* <Footer/> */}
+      
     </Layout>
   );
 };

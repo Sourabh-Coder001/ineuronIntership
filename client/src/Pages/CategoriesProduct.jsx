@@ -10,12 +10,12 @@ const titleStyle = {
   color: 'Black',
   fontWeight: 'bold', 
   textAlign:'center',
-  fontSize: '30px' // Increase font size (adjust as needed)
+  fontSize: '22px' // Increase font size (adjust as needed)
 };
 const HomePrice = {
-  color: '#F18314',
+  color: '#34700B',
   fontWeight: 'bold', 
-  fontSize: '30px' // Increase font size (adjust as needed)
+  fontSize: '26px' // Increase font size (adjust as needed)
 
 };
 const destyle={
@@ -74,7 +74,7 @@ const CategoriesProduct = () => {
                     />
                     <Card.Body>
                     <div className="Card_name card-name-price">
-                      <Card.Title style={titleStyle}>{p.name}</Card.Title>
+                      <Card.Title style={titleStyle}>{p.name.substring(0,60)}</Card.Title>
                     </div>
                     <Card.Text style={destyle}>
                       {p.description.substring(0, 60)}...

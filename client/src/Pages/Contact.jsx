@@ -1,6 +1,6 @@
 import React from 'react'
 import {BiMailSend,BiPhoneCall,BiSupport} from 'react-icons/bi';
-import FarmerImg from '../Images/Farmer Contact.jpg';
+
 import Layout from '../Components/Layout/Layout';
 const Contact = () => {
   
@@ -11,7 +11,7 @@ const Contact = () => {
         <div class="contact-wrapper"/>
         <div className="row contactus ">
         <div className="col-md-6 ">
-        <img src={FarmerImg} alt="contactus" style={{ width: "100%" }} />
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/020/804/109/small_2x/communication-and-technology-concept-hand-putting-wooden-block-cube-symbol-telephone-email-address-website-page-contact-us-or-e-mail-marketing-contact-us-in-customer-support-concept-photo.jpg" alt="contactus" style={{ width: "100%" }} />
         </div>
         <div className="col-md-4">
        
@@ -20,10 +20,10 @@ const Contact = () => {
             Avaliable
           </p>
           <p className="mt-3">
-            <BiMailSend /> : www.help@ecommerceapp.com
+            <BiMailSend /> : www.shopfyshop@gmail.com
           </p>
           <p className="mt-3">
-            <BiPhoneCall /> : 012-3456789
+            <BiPhoneCall /> : 9370171615
           </p>
           <p className="mt-3">
             <BiSupport /> : 1800-0000-0000 (toll free)
